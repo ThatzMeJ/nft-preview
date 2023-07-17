@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: var(--ff-outfit);
+}
+/*
+  5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+/*
+  8. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+:root {
+  --ff-outfit:  'Outfit', sans-serif;
+  --soft-blue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+  --main-bg: hsl(217, 54%, 11%);
+  --card-bg: hsl(216, 50%, 16%);
+  --very-dark-blue: hsl(215, 32%, 27%);
+  --white: hsl(0, 0%, 100%);
+}
+
+.bg-color {
+  background-color: var(--main-bg);
+}
+
+.container, .container img, h1, p, span, svg, div {
+  animation: slideIn 1s ease-out;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 320px;
+  background-color: var(--card-bg);
+  padding: 16px;
+  border-radius: 10px;
+  padding-bottom: 25px;
+  box-shadow: 5px 5px 54px 4px ;
+}
+
+.card {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+}
+.card img {
+  border-radius: 10px;
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+
+.container h1 {
+  color: var(--white);
+  font-size: 1.2rem;
+  padding-top: 20px;
+  padding-bottom: 15px;
+  display: block;
+  font-weight: 600;
+}
+
+.container p {
+  color: var(--soft-blue);
+  display: block;
+  padding-bottom: 14px;
+}
+
+.price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price div:nth-child(1),
+.price div:nth-child(2) {
+  display: flex;
+  align-items: center;
+}
+
+.price div:nth-child(1) span {
+  margin-left: 8px;
+  color: var(--cyan);
+}
+
+.price div:nth-child(2) span {
+  margin-left: 8px;
+  color: var(--soft-blue);
+}
+
+.line {
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid var(--very-dark-blue);
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+}
+
+.user img {
+  max-width: 35px;
+  border: 1px solid var(--white);
+  border-radius: 50%;
+  margin-right: 14px;
+  filter: blur(1px);
+}
+
+.user div {
+  font-size: 1rem;
+  color: var(--soft-blue);
+}
+.user div span {
+  color: var(--white);
+}
+
+@keyframes slideIn {
+ 0% {
+  transform: translateY(-20px);
+  opacity: 0;
+ }
+ 100% {
+  transform: translateX(0);
+  opacity: 1;
+ }
+}
